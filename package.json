@@ -1,0 +1,152 @@
+{
+  "name": "djs-selfbot-v11",
+  "version": "11.10.15",
+  "description": "An unofficial discord.js v11 fork for creating selfbots",
+  "main": "./src/index.js",
+  "types": "./typings/index.d.ts",
+  "author": {
+    "name": "Sans"
+  },
+  "browser": {
+    "ws": false,
+    "uws": false,
+    "@discordjs/uws": false,
+    "erlpack": false,
+    "prism-media": false,
+    "opusscript": false,
+    "node-opus": false,
+    "@discordjs/opus": false,
+    "tweetnacl": false,
+    "sodium": false,
+    "src/sharding/Shard.js": false,
+    "src/sharding/ShardClientUtil.js": false,
+    "src/sharding/ShardingManager.js": false,
+    "src/client/voice/dispatcher/StreamDispatcher.js": false,
+    "src/client/voice/opus/BaseOpusEngine.js": false,
+    "src/client/voice/opus/NodeOpusEngine.js": false,
+    "src/client/voice/opus/DiscordJsOpusEngine.js": false,
+    "src/client/voice/opus/OpusEngineList.js": false,
+    "src/client/voice/opus/OpusScriptEngine.js": false,
+    "src/client/voice/pcm/ConverterEngine.js": false,
+    "src/client/voice/pcm/ConverterEngineList.js": false,
+    "src/client/voice/pcm/FfmpegConverterEngine.js": false,
+    "src/client/voice/player/AudioPlayer.js": false,
+    "src/client/voice/receiver/VoiceReadable.js": false,
+    "src/client/voice/receiver/VoiceReceiver.js": false,
+    "src/client/voice/util/Secretbox.js": false,
+    "src/client/voice/util/SecretKey.js": false,
+    "src/client/voice/util/VolumeInterface.js": false,
+    "src/client/voice/ClientVoiceManager.js": false,
+    "src/client/voice/VoiceBroadcast.js": false,
+    "src/client/voice/VoiceConnection.js": false,
+    "src/client/voice/VoiceUDPClient.js": false,
+    "src/client/voice/VoiceWebSocket.js": false
+  },
+  "bundleDependencies": [],
+  "dependencies": {
+    "long": "^4.0.0",
+    "otplib": "^12.0.1",
+    "prism-media": "^0.0.4",
+    "snekfetch": "^3.6.4",
+    "tweetnacl": "^1.0.0",
+    "ws": "^6.0.0"
+  },
+  "deprecated": false,
+  "devDependencies": {
+    "@discordjs/docgen": "^0.11.1",
+    "@types/node": "^9.4.6",
+    "eslint": "^5.4.0",
+    "https-proxy-agent": "^7.0.6",
+    "json-bigint": "^1.0.0",
+    "parallel-webpack": "^2.3.0",
+    "tslint": "^3.15.1",
+    "tslint-config-typings": "^0.2.4",
+    "typescript": "^3.0.1",
+    "uglifyjs-webpack-plugin": "^1.3.0",
+    "webpack": "^4.17.0"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "files": [
+    "src",
+    "typings"
+  ],
+  "directories": {
+    "lib": "src",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/002-sans/djs-selfbot-v11.git"
+  },
+  "keywords": [
+    "discord.js",
+    "discord.js v11",
+    "selfbot",
+    "selfbot v11",
+    "djs",
+    "api",
+    "bot",
+    "node",
+    "discord",
+    "client",
+    "discordapp"
+  ],
+  "license": "GNU General Public License v3.0",
+  "bugs": {
+    "url": "https://github.com/002-sans/djs-selfbot-v11/issues"
+  },
+  "homepage": "https://github.com/002-sans/djs-selfbot-v11#readme",
+  "peerDependencies": {
+    "@discordjs/opus": "^0.1.0",
+    "@discordjs/uws": "^10.149.0",
+    "bufferutil": "^4.0.0",
+    "erlpack": "discordapp/erlpack",
+    "libsodium-wrappers": "^0.7.3",
+    "node-opus": "^0.2.7",
+    "opusscript": "^0.0.6",
+    "sodium": "^2.0.3"
+  },
+  "peerDependenciesMeta": {
+    "bufferutil": {
+      "optional": true
+    },
+    "erlpack": {
+      "optional": true
+    },
+    "@discordjs/opus": {
+      "optional": true
+    },
+    "node-opus": {
+      "optional": true
+    },
+    "opusscript": {
+      "optional": true
+    },
+    "sodium": {
+      "optional": true
+    },
+    "libsodium-wrappers": {
+      "optional": true
+    },
+    "uws": {
+      "optional": true
+    }
+  },
+  "runkitExampleFilename": "./docs/examples/ping.js",
+  "scripts": {
+    "all": "npm run build && npm publish",
+    "test": "npm run lint:all && npm run docs:test",
+    "fix:all": "npm run lint:fix && npm run lint:typings:fix",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "lint:typings": "tslint typings/index.d.ts typings/discord.js-test.ts",
+    "lint:typings:fix": "tslint typings/index.d.ts typings/discord.js-test.ts --fix",
+    "lint:all": "npm run lint && npm run lint:typings",
+    "docs": "docgen --source src --custom docs/index.yml --output docs/main.json",
+    "docs:test": "docgen --source src --custom docs/index.yml",
+    "build": "npm run lint:fix && npm run lint:typings:fix && npm run docs",
+    "webpack": "parallel-webpack"
+  }
+}
